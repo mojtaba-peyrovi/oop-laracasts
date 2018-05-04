@@ -1,0 +1,15 @@
+--------------------------------
+OOP PHP:
+
+functions inside the class are called methods.
+__construct method ==> as soon as we instantiate a new class it runs.
+
+difference between private function and protected function:
+
+        private function only works within the parent class.
+        protected function can be still used when the class is extended.
+
+inheritation: when we want a class to inherit all behaviors from a parent class we say:  class Child extends Parent{      }
+
+pow(number,power) will make the first variable to the power of the second variable.
+
