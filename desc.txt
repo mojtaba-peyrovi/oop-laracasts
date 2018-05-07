@@ -13,3 +13,28 @@ inheritation: when we want a class to inherit all behaviors from a parent class 
 
 pow(number,power) will make the first variable to the power of the second variable.
 
+ABSTRACT CLASSES: we make classes to share some attribute and functionality with sub-classes but we never instantiate abstract classes. 
+ABSTRACT  FUNCTION: we will put it inside the parent class and there is no curly bracket for it. it just says the function must be provided within the sub-class.
+M_PI function will return 3.14
+
+$circle = new Circle;
+echo $circle->getArea();  ==> short way of doing it:   (new Circle)->getArea();
+
+Type Hinting:  when we want to use a variable from anther class we can inject the type of the object to the method. like this: public function hire(Person $person)
+normally we put each class in a separated file.
+
+in order to use namespacing and autoload: we make a composer.json file. then install composer install.. then it will make autoload.php for use. 
+inside the composer.json we will make "psr-s" : "name\\":"dependencies folder" 
+then we can use that name as the root of the project and besed on that we can do namespacing.
+also we need to once require 'vendor/autoload.php" at index.php
+------
+func_get_args()  ==> it sums up all arguments in the method. e.g.    public function add()  { return array_sum(func_get_args()); }  ==> add(1,2,3) = 6
+in new versions of php it replaced by this:  public function add(...$nums) { return array_sum($nums); }
+when the function has no interaction anywhere outside the class and it just gets some input and retruns outputs it can be defined as public static function. 
+then it will become a global function. e.g.  echo Math::add(1,2,3); when the static method has connections to other methods outside, it will easily break.
+CONST: when we have a variable that would NEVER change and no one could change it, we can use constant. and the name of the constant should be all uppercased. e.g.   class bankAccount{  const TAX = 0.03;  }   and we can call it this way:  echo bankAccount::TAX;
+kebab-case:  is a function that separates words in a sentence by  "-" e.g. mojtaba-peyrovi-from-iran   its a method of Illuminat\Support\Str;
+we can call it like: Str::kebab('mojtaba peyrovi from iran');
+interface: its like a contract that has no logic but shows how different instances of an interface share some attributes. methods inside the interface dont have any curly bracket becuase there is no logic.  the classes we want to use the interface will be called like this:  class dog implements Animal {   }
+and inside all the classes that implement the interface we are forced to use the same methods the interface has.
+in this example (interface.php) when we have an interface and more than one classes that implement this interface, to switch between them we dont have to change the class name everywhere, we just have to change the interface, (logger in this example) and in the __construct we shouldnt directly mention the name of the classes that use interface, instead we use the name of the interface. after that without touching any class, we can just add an interface and it will change it everywhere we use it.
